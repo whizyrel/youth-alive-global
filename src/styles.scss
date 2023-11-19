@@ -1,1 +1,169 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$youth-alive-global-primary: mat.define-palette(mat.$indigo-palette);
+$youth-alive-global-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$youth-alive-global-warn: mat.define-palette(mat.$red-palette);
+
+@include mat.core();
+
+$typography: mat.define-typography-config(
+  $font-family: "Poppins, Rebellion Knight Personal Use O, Sansation, Roboto",
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$youth-alive-global-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $youth-alive-global-primary,
+      accent: $youth-alive-global-accent,
+      warn: $youth-alive-global-warn,
+    ),
+    typography: $typography,
+    density: 0,
+  )
+);
+
+@include mat.typography-hierarchy($typography);
+
+$ng-theme: $youth-alive-global-theme;
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+$primary: map-get($ng-theme, "primary", "default");
+$light: map-get($ng-theme, "primary", "lighter");
+$secondary: map-get($ng-theme, "accent", "default");
+$warning: map-get($ng-theme, "warn", "default");
+$danger: map-get($ng-theme, "warn", 700);
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "width": (
+      property: width,
+      class: w,
+      responsive: true,
+      values:
+        map-merge(
+          map-get($utilities, width, values),
+          (
+            10: 10%,
+            20: 20%,
+            30: 30%,
+            35: 35%,
+            40: 40%,
+            60: 60%,
+            70: 70%,
+            80: 80%,
+            90: 90%,
+          )
+        ),
+    ),
+    "height": (
+      property: height,
+      class: h,
+      responsive: true,
+      values:
+        map-merge(
+          map-get($utilities, height, values),
+          (
+            fit-content: fit-content,
+          )
+        ),
+    ),
+    "max-height": (
+      property: max-height,
+      class: mxh,
+      responsive: true,
+      values: (
+        "480px": 480px,
+      ),
+    ),
+    "z-index": (
+      property: z-index,
+      class: z-index,
+      responsive: true,
+      values: (
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+      ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+// INFO https://www.cdnfonts.com/rebellion-knight-personal-use-o.font
+@import url("https://fonts.cdnfonts.com/css/rebellion-knight-personal-use-o");
+// INFO https://www.cdnfonts.com/sansation.font
+@import url('https://fonts.cdnfonts.com/css/sansation');
+
+@include mat.all-component-themes($ng-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+@mixin no-outline {
+  outline: none !important;
+  outline-style: none !important;
+}
+
+@mixin normalize-anchor {
+  text-decoration: none !important;
+  color: inherit !important;
+
+  &:hover {
+    color: auto !important;
+    text-decoration: none !important;
+  }
+}
+
+@mixin apply-font-family($font-family) {
+  font-family: $font-family;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden auto;
+  scroll-behavior: smooth;
+
+  a {
+    @include normalize-anchor();
+  }
+
+  input,
+  textarea {
+    @include no-outline();
+  }
+
+  textarea {
+    resize: none !important;
+  }
+}
