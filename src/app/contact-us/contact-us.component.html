@@ -1,0 +1,54 @@
+<main class="d-flex flex-column w- rounded-bottom-3" style="min-height: 100vh; background: url(https://storage.googleapis.com/gci-static-assets/yag/contact-us-background.jpeg); background-position: 50%;  background-color: #fff;
+    background-size: cover; background-repeat: no-repeat;">
+    <!-- INFO Hero-ish -->
+    <div class="d-flex flex-column w-100 h-100 mt-5 px-0 px-md-5 pt-5 pb-0 py-md-5">
+        <mat-card class="d-flex flex-row flex-wrap px-3 px-md-5 py-5 py-md-9 rounded-0 rounded-md-5 bg-white shadow-none z-index-0">
+            <div class="d-flex flex-column col-12 col-md-7 mb-5 mb-md-0 pe-md-2 ps-lg-3 ps-xl-5">
+                <span class="mt-auto mb-0 mat-headline-3 fw-bolder">For More Details</span><span class="mt-auto mb-0 mat-headline-3 fw-bolder">Contact Us!</span>
+
+                <svg class="my-5" xmlns="http://www.w3.org/2000/svg" width="222" height="4" viewBox="0 0 222 4" fill="none">
+                    <path d="M2.18701 2H219.187" stroke="#001DFF" stroke-width="4" stroke-linecap="round" />
+                </svg>
+
+                <span class="mt-2 mb-0 mat-headline-4">Send our team a quick message with your question, project ideas and we'll get back to you as soon as possible. We're
+                pretty responsive and will try to respond in a few hours 🙂</span>
+
+                <span class="mt-5 mb-0 mat-h3">Address:</span>
+                <span class="mb-0 mat-h4">Global Youth Office, Living Faith Church,</span>
+                <span class="mat-h4">Canaanland, Ota, Nigeria.</span>
+
+                <span class="mt-4 mb-0 mat-h3">Contact:</span>
+                <a class="mb-0 mat-h4" href="tel: +2349028888888">+234 902 888 8888</a>
+                <a class=" mb-auto mat-h4" href="mailto: hello@youthaliveglobal.com">hello@youthaliveglobal.com</a>
+            </div>
+
+            <!-- INFO FORM -->
+            <div class="d-flex flex-column col-12 col-md-5 ps-md-2 ps-lg-3 ps-xl-5">
+                <form [formGroup]="form" class="d-flex flex-column w-100 my-auto">
+                    <mat-form-field class="w-100" appearance="outline" floatLabel="always">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" formControlName="name">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline" floatLabel="always">
+                        <mat-label>Phone</mat-label>
+                        <input matInput type="tel" formControlName="phone">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline" floatLabel="always">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline" floatLabel="always">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput type="text" formControlName="message" rows="10">
+                        </textarea>
+                    </mat-form-field>
+                
+                    <button mat-flat-button class="py-4 rounded-3" color="primary" [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</main>

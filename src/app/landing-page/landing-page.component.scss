@@ -1,0 +1,82 @@
+@import "../../styles.scss";
+
+main {
+  mat-toolbar {
+    min-height: 100px;
+
+    div {
+      button[mat-flat-button] {
+        background-color: #ffffff1f !important;
+        @include backdrop-filter(12px);
+      }
+    }
+  }
+
+  .yag-heroish-wrapper {
+    min-height: 100vh;
+    // background-color: #00000047;
+
+    // @include media-breakpoint-up(sm) {
+    //     min-height: 990px;
+    // }
+
+    div {
+      span.yag-hero--text {
+        font-size: 64px;
+        font-weight: 400;
+        line-height: normal;
+
+        @include apply-font-family($handwriting-typeface);
+
+        @include media-breakpoint-up(sm) {
+          font-size: 128px;
+          line-height: 148.72px;
+        }
+      }
+
+      span.mat-h1 {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+section {
+  min-height: 600px;
+
+  &.yag-welcome-wrapper {
+    background-image: url(https://storage.googleapis.com/gci-static-assets/yag/college-section-background-1.png),
+      url(https://storage.googleapis.com/gci-static-assets/yag/college-section-background-2.png),
+      url(https://storage.googleapis.com/gci-static-assets/yag/college-section-background-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.yag-video-wrapper {
+    height: 720px;
+    min-height: 720px;
+
+    @include media-breakpoint-up(sm) {
+      height: 75vh;
+      min-height: 75vh;
+    }
+  }
+
+  &.yag-meet-our-pastor {
+    div {
+      @media (orientation: portrait) {
+        @include media-breakpoint-between(sm, md) {
+          flex-wrap: nowrap;
+        }
+      }
+
+      img {
+        // height: 320px;
+
+        // @include media-breakpoint-up(lg) {
+            height: 782px;
+        // }
+      }
+    }
+  }
+}

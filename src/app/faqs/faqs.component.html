@@ -1,0 +1,24 @@
+<section class="d-flex flex-column w-100 px-sm-5 py-5 py-sm-9" style="background-color: #F1F5F9;">
+    <div class="d-flex flex-column container">
+        <span class="mx-auto mat-headline-3 fw-bolder text-center text-danger">Frequently asked questions</span>
+
+        <div class="d-flex flex-column w-100">
+            <mat-accordion #acc [multi]="true">
+                <mat-expansion-panel *ngFor="let item of faqs; index as i;" class="mb-4 rounded-3 shadow-none"
+                    hideToggle #expp (closed)="faqExpPanelStateMap.set(i, false)"
+                    (opened)="faqExpPanelStateMap.set(i, true)">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ item.title }}
+                        </mat-panel-title>
+
+                        <mat-icon color="warn" (click)="togglePanel(i)">{{ faqExpPanelStateMap.get(i) ? 'expand_less' :
+                            'expand_more' }}</mat-icon>
+                    </mat-expansion-panel-header>
+                    <p>{{ item.body }}.</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+        </div>
+    </div>
+</section>

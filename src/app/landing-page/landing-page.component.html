@@ -1,0 +1,94 @@
+<!-- INFO Main Wrapper -->
+<main class="d-flex flex-column w-100" style="background: linear-gradient(97deg, rgba(0, 0, 0, 0.20) 52.7%, rgba(0, 0, 0, 0.00) 77.04%), linear-gradient(191deg, rgba(0, 0, 0, 0.30) 20.18%, rgba(0, 0, 0, 0.00) 77.23%), url(https://storage.googleapis.com/gci-static-assets/yag/hero-background.jpg), lightgray -60.223px -12.387px / 129.75% 138.417% no-repeat; background-color: #060717;
+    background-repeat: no-repeat;
+    background-size: cover;">
+    <!-- INFO Hero-ish -->
+    <div class="d-flex flex-column w-100 yag-heroish-wrapper">
+        <!-- INFO Wrapper for the hero text -->
+        <div class="d-flex flex-column m-auto">
+            <span class="mx-auto text-capitalize text-white yag-hero--text">Rising</span>
+            <span class="mx-auto text-capitalize text-white yag-hero--text">Giants!</span>
+
+            <span class="d-flex d-sm-none mx-auto mt-2 mb-0 mat-h3 text-white">End time army on the rise!</span>
+
+            <span class="d-none d-sm-flex mx-auto mt-2 mb-0 mat-h1 text-white">End time army on the rise!</span>
+        </div>
+    </div>
+</main>
+
+<section class="d-flex flex-column w-100 px-2 py-5 py-sm-9 yag-welcome-wrapper">
+    <!-- mxw-80 mxw-sm-75 mxw-lg-60 mxw-xl-50 -->
+    <div class="d-flex flex-column m-auto container">
+        <div class="d-none d-sm-flex flex-column mx-auto">
+            <span class="mb-0 mat-headline-3 text-center text-uppercase fw-bolder" style="line-height: 120%;">
+                welcome to a
+            </span>
+            <span class="mb-0 mat-headline-3 text-center text-uppercase fw-bolder" style="line-height: 120%;">
+                family of love!
+            </span>
+        </div>
+
+        <div class="d-flex d-sm-none flex-column mx-auto">
+            <span class="mb-0 mat-headline-4 text-center text-uppercase fw-bolder" style="line-height: 120%;">
+                welcome to a
+            </span>
+            <span class="mb-0 mat-headline-4 text-center text-uppercase fw-bolder" style="line-height: 120%;">
+                family of love!
+            </span>
+        </div>
+
+        <span class="mx-auto mt-4 mb-0 mat-h3 text-center" style="line-height: 160%;">
+            Welcome to the Winners Youth Alive! We are a vibrant community committed to nurturing young hearts and minds
+            in faith.
+            Our mission is to create a safe and inclusive space where young individuals can explore their spirituality,
+            build
+            meaningful connections, and grow into compassionate leaders.
+        </span>
+        <span class="mx-auto mat-h3 text-center" style="line-height: 160%;">
+            Our dedicated team of pastors, mentors, and volunteers work
+            tirelessly to organize engaging events, weekly gatherings, service projects, and educational programs. We
+            believe in
+            fostering a culture of respect, understanding, and support.
+        </span>
+    </div>
+</section>
+
+<!-- px-3 px-lg-5 -->
+<section class="d-flex flex-column px-2 py-5 py-sm-9 yag-video-wrapper z-index-0">
+    <div class="d-flex flex-column h-100 container">
+        <div class="d-flex w-100 h-100 bg-dark rounded-3"
+            style="background-image: url('https://storage.googleapis.com/gci-static-assets/yag/lightbox-image.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <button mat-icon-button class="d-flex m-auto bg-white rounded-circle" style="width: 64px; height: 64px;">
+                <mat-icon class="m-auto" style="width: 32px; font-size: 32px; height: 32px;">play_arrow</mat-icon>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- INFO Meet our Youth Pastor -->
+<section class="d-flex flex-column px-2 py-5 py-sm-9 yag-meet-our-pastor">
+    <!-- px-3 px-lg-5 -->
+    <div class="d-flex flex-wrap-reverse container">
+        <!-- INFO Text -->
+        <div class="d-flex flex-column p-1 col-12 col-md-6">
+            <span class="mb-4 mat-headline-3 fw-bolder text-uppercase">Meet our Youth Pastor</span>
+
+            <span
+                *ngFor="let item of ['Hello Rising Giants,', 'I am beyond thrilled to welcome you to our vibrant corner of the digital universe.', 'This isn\'t just a website; it\'s a hub of inspiration, connection, and growth. Here, we embark on a journey of faith, fun, and transformation. Brace yourself for exciting events, empowering messages, and a community that feels like family.', 'As your National Youth Pastor, my heart is committed to seeing you rise into the incredible purpose that God has for you. Here we will be inspired, build lasting connections, and explore the extraordinary together.', 'You\'re not just a visitor; you\'re part of a dynamic movement. This is your place to shine, grow, and make lasting friendships.', 'Welcome to a place where your journey matters! A space where faith meets fun, and purpose becomes a lifestyle!']; last as isLast"
+                class="mb-2 mb-lg-4 mat-h2" [ngClass]="{'mb-sm-5': isLast}">
+                {{ item }}
+            </span>
+
+            <span class="mt-2 mat-headline-2" style="font-family: BeautyRains;">Steve Ogah</span>
+        </div>
+
+        <!-- INFO YP Image -->
+        <div class="d-flex flex-column mb-3 mb-md-4 mb-lg-0 p-1 col-12 col-md-6">
+            <img class="w-100 m-auto px-2 rounded-4"
+                src="https://storage.googleapis.com/gci-static-assets/yag/youth-pastor.jpg" alt="Youth Pastor Image"
+                style="flex: 1 0 0; object-fit: contain; object-position: center;">
+        </div>
+    </div>
+</section>
+
+<app-join-community-cta></app-join-community-cta>

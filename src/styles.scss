@@ -24,8 +24,12 @@ $youth-alive-global-warn: mat.define-palette(mat.$red-palette);
 
 @include mat.core();
 
+$primary-typeface: Poppins;
+$handwriting-typeface: Rebellion Knight Personal Use O;
+$secondary-typeface: Sansation;
+
 $typography: mat.define-typography-config(
-  $font-family: "Poppins, Rebellion Knight Personal Use O, Sansation, Roboto",
+  $font-family: "Poppins, Rebellion Knight Personal Use O, Sansation, BeautyRains, Baysoir, Roboto",
 );
 
 // Create the theme object. A theme consists of configurations for individual
@@ -50,11 +54,28 @@ $ng-theme: $youth-alive-global-theme;
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 
+// color: #34261F
 $primary: map-get($ng-theme, "primary", "default");
 $light: map-get($ng-theme, "primary", "lighter");
 $secondary: map-get($ng-theme, "accent", "default");
-$warning: map-get($ng-theme, "warn", "default");
+// $warning: map-get($ng-theme, "warn", "default");
 $danger: map-get($ng-theme, "warn", 700);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+  9: $spacer * 7,
+  10: $spacer * 8,
+  11: $spacer * 9,
+);
 
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap/scss/functions";
@@ -81,6 +102,7 @@ $utilities: map-merge(
             70: 70%,
             80: 80%,
             90: 90%,
+            unset: unset,
           )
         ),
     ),
@@ -96,6 +118,22 @@ $utilities: map-merge(
           )
         ),
     ),
+    "max-width": (
+      property: max-width,
+      class: mxw,
+      responsive: true,
+      values: (
+        25: 25%,
+        40: 40%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        80: 80%,
+        90: 90%,
+        100: 100%,
+        "480px": 480px,
+      ),
+    ),
     "max-height": (
       property: max-height,
       class: mxh,
@@ -103,6 +141,12 @@ $utilities: map-merge(
       values: (
         "480px": 480px,
       ),
+    ),
+    "rounded": (
+      property: border-radius,
+      class: rounded,
+      responsive: true,
+      values: map-get($utilities, rounded, values),
     ),
     "z-index": (
       property: z-index,
@@ -115,16 +159,63 @@ $utilities: map-merge(
         3: 3,
       ),
     ),
+    "padding": (
+      responsive: true,
+      property: padding,
+      class: p,
+      values: $spacers
+    ),
+    "padding-x": (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers
+    ),
+    "padding-y": (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers
+    ),
+    "padding-top": (
+      responsive: true,
+      property: padding-top,
+      class: pt,
+      values: $spacers
+    ),
+    "padding-end": (
+      responsive: true,
+      property: padding-right,
+      class: pe,
+      values: $spacers
+    ),
+    "padding-bottom": (
+      responsive: true,
+      property: padding-bottom,
+      class: pb,
+      values: $spacers
+    ),
+    "padding-start": (
+      responsive: true,
+      property: padding-left,
+      class: ps,
+      values: $spacers
+    )
   )
 );
 
 @import "bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0);
 // INFO https://www.cdnfonts.com/rebellion-knight-personal-use-o.font
 @import url("https://fonts.cdnfonts.com/css/rebellion-knight-personal-use-o");
 // INFO https://www.cdnfonts.com/sansation.font
-@import url('https://fonts.cdnfonts.com/css/sansation');
+@import url("https://fonts.cdnfonts.com/css/sansation");
+// Baysoir
+// @import url("https://storage.googleapis.com/gci-static-assets/yag/baysoir-sans-regular.ttf");
+// INFO https://www.cdnfonts.com/beautyrains.font
+@import url('https://fonts.cdnfonts.com/css/beautyrains');
 
 @include mat.all-component-themes($ng-theme);
 
@@ -147,6 +238,10 @@ $utilities: map-merge(
 
 @mixin apply-font-family($font-family) {
   font-family: $font-family;
+}
+
+@mixin backdrop-filter($size: 5px) {
+  backdrop-filter: blur($size);
 }
 
 body {

@@ -1,0 +1,11 @@
+<div class="d-flex flex-column w-100 py-3">
+    <!-- INFO Anchor links -->
+    <a *ngFor="let link of links" mat-button [routerLink]="link.paths" routerLinkActive="text-warning"
+        class="my-auto p-3 rounded-pill">{{ link.title }}</a>
+
+    <!-- INFO Contact us button -->
+    <a mat-flat-button class="my-2 px-sm-3 px-xl-5 py-2 py-lg-3 rounded-pill"
+        [routerLink]="['/', 'contact-us']" routerLinkActive="active-emphasized-blurredd-anchor-link" (click)="closeSheet()">
+        <span class="m-auto">Contact us</span>
+    </a>
+</div>

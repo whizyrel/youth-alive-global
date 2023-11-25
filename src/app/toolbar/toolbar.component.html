@@ -1,0 +1,38 @@
+<!-- px-2 px-xl-5 px-md-2 py-2  -->
+<mat-toolbar class="d-flex w-100 px-2 px-xl-5 px-md-2 py-2 position-fixed top-0 bg-transparent text-white z-index-3">
+    <!-- INFO Left Column: Logo and Text -->
+    <div class="d-flex me-md-2">
+        <!-- INFO Logo Here -->
+        <a [routerLink]="['/']">
+            <img src="https://storage.googleapis.com/gci-static-assets/yag/yag.svg" alt="YAG Logo"
+                style="width: 76px; height: 74px;">
+        </a>
+
+        <!-- INFO YAG Text -->
+        <span class="d-none d-lg-flex ms-2 ms-lg-3 my-auto mat-h1" style="font-weight: 700;">{{ YAG }}</span>
+
+        <span class="d-none d-md-flex d-lg-none ms-2 ms-lg-3 my-auto mat-h2" style="font-weight: 700;">{{ YAG
+            }}</span>
+
+        <span class="d-md-none ms-2 ms-lg-3 my-auto mat-h3" style="font-weight: 700;">{{ YAG }}</span>
+    </div>
+
+    <!-- INFO Mobile Hamburger Menu -->
+    <button mat-icon-button class="d-lg-none ms-auto my-auto rounded-circle" (click)="openBottomSheet()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- INFO Anchor links wrapper on large screens -->
+    <div class="d-none d-lg-flex ms-auto">
+        <!-- INFO Anchor links -->
+        <div class="d-flex me-2">
+            <a *ngFor="let link of links" mat-button [routerLink]="link.paths" routerLinkActive="text-warning" 
+                class="my-auto p-2 p-lg-3 rounded-pill">{{ link.title }}</a>
+        </div>
+
+        <!-- INFO Contact us button -->
+        <a mat-flat-button class="ms-auto my-auto px-sm-3 px-xl-5 py-2 py-lg-3 rounded-pill text-white" [routerLink]="['/', 'contact-us']" routerLinkActive="active-emphasized-blurredd-anchor-link">
+            <span class="m-auto">Contact us</span>
+        </a>
+    </div>
+</mat-toolbar>

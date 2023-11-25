@@ -1,0 +1,63 @@
+<main class="d-flex flex-column w-100" style="height: 100vh; background: linear-gradient(0deg, #520606 0%, #520606 100%), url(https://storage.googleapis.com/gci-static-assets/yag/corpers-background.png), lightgray 50% / cover no-repeat; 
+    background-size: cover; background-blend-mode: multiply, normal;">
+    <!-- INFO Hero-ish -->
+    <div class="d-flex flex-column w-100 h-100 px-3 px-sm-9 yag-heroish-wrapper">
+        <!-- INFO Wrapper for the hero text -->
+        <div class="d-none d-sm-flex flex-column m-auto">
+            <span class="mb-0 mat-headline-2 text-center fw-bolder text-uppercase text-white yag-hero--text"
+                style="line-height: 120%;">Winners YOUTH</span>
+            <span class="mb-0 mat-headline-2 text-center fw-bolder text-uppercase text-white yag-hero--text"
+                style="line-height: 120%;">CORPERS fellowship</span>
+        </div>
+
+        <!-- INFO Small screen -->
+        <div class="d-flex d-sm-none flex-column m-auto">
+            <span class="mb-0 mat-headline-3 text-center fw-bolder text-uppercase text-white yag-hero--text"
+                style="line-height: 120%;">Winners CORPERS fellowship</span>
+        </div>
+    </div>
+</main>
+
+<!-- INFO WHAT IS WYCF! -->
+<section class="d-flex flex-column w-100 px-3 px-lg-5 py-9" style="background: #FFFFEA">
+    <div class="d-flex flex-wrap-reverse container">
+        <!-- INFO Text -->
+        <div class="d-flex flex-column col-12 p-2">
+            <span class="mx-auto mt-auto mb-4 fw-bolder mat-headline-3" style="line-height: 120%;">What is WYCF!</span>
+            <span class="mx-auto mb-3 text-center" style="line-height: 160%;">WYCF Stands for WINNERS YOUTH CORPERS FELLOWSHIP. It is the community of corpers across states with the same fire to see
+            revivial in the life of corpers</span>
+            <span class="mx-auto mb-auto text-center" style="line-height: 160%;">WYCF exist in every state and is headed by the state coordinator. If you would like WYCF to come to your state you can
+            reach out to us and we will be there in no time.</span>
+        </div>
+    </div>
+</section>
+
+<section class="d-flex flex-column w-100 px-3 px-lg-5 py-5">
+    <div class="d-flex flex-column container">
+        <span class="mx-auto mt-auto mb-4 fw-bolder text-uppercase mat-headline-3" style="line-height: 120%;">Check out
+            our locations</span>
+        <span class="mx-auto mat-h3 fw-bolder text-uppercase">LAGOS</span>
+
+        <!-- INFO Locations -->
+        <div class="d-flex flex-wrap">
+            <div *ngFor="let item of [1,2,3,4,5,6,7,8]; odd as isOdd; even as isEven;"
+                class="d-flex flex-column col-12 col-md-6 col-xl-3 mb-5"
+                [ngClass]="{'pe-sm-1': isEven, 'ps-sm-1': isOdd}">
+                <div class="d-flex w-100">
+                    <button mat-icon-button class="d-flex w-fit-content h-fit-content rounded-circle"
+                        style="background-color: #FFEF5C;">
+                        <mat-icon class="material-symbols-outllined"
+                            style="width: 24px; height: 24px; font-size: 24px;">location_on_otline</mat-icon>
+                    </button>
+
+                    <span class="ms-3 my-auto mat-h2 fw-bolder text-uppercase">WYCF, LAGOS</span>
+                </div>
+
+                <span class="mt-2 mat-captions">Senate building, University of Lagos, Akoka, Nigeria.</span>
+                <span class="mt-2 mat-captions">+234 902 866 6201</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-campus-corpers-cta [ctaHeading]="'Get to your Corpers lodge faster'"></app-campus-corpers-cta>

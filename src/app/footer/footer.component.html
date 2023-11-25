@@ -1,0 +1,49 @@
+<!-- INFO Footer -->
+<footer class="d-flex flex-column w-100 px-3 px-md-4 px-lg-5 py-3 py-lg-5">
+    <div class="d-flex flex-wrap mx-lg-3 mx-xl-5 my-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <!-- INFO Logo -->
+            <img class="mb-4" src="https://storage.googleapis.com/gci-static-assets/yag/yag-dark.png" alt="YAG Logo"
+                style="width: 76px; height: 74px;">
+
+
+            <!-- INFO Address -->
+            <div class="d-flex flex-column mb-3">
+                <span class="mb-0 mat-h3" style="line-height: normal;">Address:</span>
+                <span>{{ address }}</span>
+            </div>
+
+            <!-- INFO Email & Phone Number -->
+            <div class="d-flex flex-column mb-3">
+                <span class="mb-0 mat-h3" style="line-height: normal;">Contact:</span>
+                <a [href]="'tel:' + contactNumber.no">{{ contactNumber.title }}</a>
+                <a [href]="'mailto' + email">{{ email }}</a>
+            </div>
+        </div>
+
+        <div class="d-flex col-12 col-md-6">
+            <div class="d-flex flex-wrap w-100 my-auto">
+                <div class="d-flex flex-column col-12 col-md-4 mb-3 mb-3 md-0">
+                    <span class="mat-h2 fw-bolder">Resources</span>
+
+                    <a *ngFor="let link of links" [routerLink]="link.paths"
+                        class="mb-3">{{ link.title }}</a>
+                </div>
+
+                <div class="d-flex flex-column col-12 col-md-4 mb-3 mb-3 md-0">
+                    <span class="mat-h2 fw-bolder">Social</span>
+
+                    <a *ngFor="let socialLink of socialLinks" [href]="socialLink.href" class="mb-3">{{
+                        socialLink.title }}</a>
+                </div>
+
+                <div class="d-flex flex-column col-12 col-md-4">
+                    <span class="mat-h2 fw-bolder">Company</span>
+
+                    <span class="mb-1">2023 youthaliveglobal.</span>
+                    <span>All right reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

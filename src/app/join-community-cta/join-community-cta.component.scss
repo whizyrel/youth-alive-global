@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+section {
+    &.yag-community-cta {
+    height: 532px;
+    background-image: url(https://storage.googleapis.com/gci-static-assets/yag/cta-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    div {
+      background-color: #ffffff1f;
+      @include backdrop-filter(20px);
+
+      @include media-breakpoint-up(md) {
+        width: 620px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 840px;
+      }
+    }
+  }
+}

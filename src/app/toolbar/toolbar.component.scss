@@ -1,0 +1,20 @@
+@import '../../styles.scss';
+
+mat-toolbar {
+    min-height: 100px;
+
+    div {
+      a[mat-flat-button] {
+        background-color: #ffffff1f !important;
+        @include backdrop-filter(12px);
+
+        &.active-emphasized-blurredd-anchor-link {
+          background: #FFEF5C!important;
+          
+          span {
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
