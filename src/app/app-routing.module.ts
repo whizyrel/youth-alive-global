@@ -31,8 +31,8 @@ const routes: Routes = [
     component: CorpersComponent,
   },
   {
-    title: `Students - ${YAG}`,
-    path: 'students',
+    title: `Campus - ${YAG}`,
+    path: 'campus',
     component: StudentsComponent,
   },
   {
