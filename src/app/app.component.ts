@@ -10,7 +10,7 @@ import { IExternalLink } from './interfaces/external-link.interface';
 export class AppComponent {
   public readonly toolbarLinks: ILink[] = [
     { title: 'Fellowship', paths: ['/', 'fellowship'] },
-    { title: 'Students', paths: ['/', 'students'] },
+    { title: 'Campus', paths: ['/', 'campus'] },
     { title: 'Corpers', paths: ['/', 'corpers'] },
     { title: 'Word Up', paths: ['/', 'word-up'] },
     { title: 'Innovation Hub', paths: ['/', 'innovation-hub'] },
