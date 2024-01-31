@@ -35,8 +35,16 @@
 </section>
 
 <!-- INFO Why you should be part of us -->
-<section class="d-flex flex-column w-100 px-3 px-lg-5 py-9 patterned-background">
-    <div class="d-flex flex-column flex-nowrap container">
+<section class="d-flex flex-column w-100 position-relative px-3 px-lg-5 py-9 patterned-background">
+    <div class="d-flex h-42px position-absolute left-10p left-sm-403px top-10p top-sm-226px z-index-0" style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+
+    <div class="d-flex w-100 w-sm-634px h-42px  position-absolute left-m10p left-sm-m6px top-80p top-sm-170px z-index-0"
+        style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+    
+    <div class="d-flex w-100 w-sm-634px h-42px position-absolute right-10p right-sm-53px bottom-10p bottom-sm-22px z-index-0"
+        style="background: linear-gradient(90deg, #FFB649 0%, #FBFF2B 98.58%); filter: blur(150px);"></div>
+
+    <div class="d-flex flex-column flex-nowrap container z-index-1">
         <!-- INFO Text -->
         <div class="d-flex flex-column col-12 mb-4 p-2">
             <span class="mx-auto mb-0 fw-bolder mat-headline-3 text-center text-uppercase" style="line-height: 120%;">Why you should</span>
@@ -55,7 +63,15 @@
 </section>
 
 <!-- INFO Why you should be part of us -->
-<section class="d-flex flex-column w-100 px-3 px-lg-5 py-9 patterned-background">
+<section class="d-flex flex-column w-100 position-relative px-3 px-lg-5 py-9 patterned-background">
+    <div class="d-flex h-42px position-absolute left-10p left-sm-403px top-10p top-sm-226px z-index-0" style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+    
+    <div class="d-flex w-100 w-sm-634px h-42px  position-absolute left-m10p left-sm-m6px top-80p top-sm-170px z-index-0"
+        style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+    
+    <div class="d-flex w-100 w-sm-634px h-42px position-absolute right-10p right-sm-53px bottom-20p bottom-sm-298px z-index-0"
+        style="background: linear-gradient(90deg, #FFB649 0%, #FBFF2B 98.58%); filter: blur(150px);"></div>
+
     <div class="d-flex flex-column flex-nowrap container">
         <!-- INFO Text -->
         <div class="d-flex flex-column col-12 mb-4 p-2">
@@ -85,7 +101,16 @@
 </section>
 
 <!-- INFO What makes us a vibrant family! -->
-<section class="d-flex flex-column w-100 px-3 px-lg-5 py-9 patterned-background">
+<section class="d-flex flex-column w-100 position-relative px-3 px-lg-5 py-9 patterned-background">
+    <div class="d-flex h-42px position-absolute left-10p left-sm-403px top-10p top-sm-226px z-index-0"
+        style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+    
+    <div class="d-flex w-100 w-sm-634px h-42px  position-absolute left-m10p left-sm-m6px top-80p top-sm-170px z-index-0"
+        style="background: linear-gradient(90deg, #FF4949 0%, #FF2BD0 98.58%); filter: blur(150px);"></div>
+    
+    <div class="d-flex w-100 w-sm-634px h-42px position-absolute right-10p right-sm-53px bottom-10p top-sm-482px z-index-0"
+        style="background: linear-gradient(90deg, #FFB649 0%, #FBFF2B 98.58%); filter: blur(150px);"></div>
+
     <div class="d-flex flex-column flex-nowrap container">
         <!-- INFO Text -->
         <div class="d-flex flex-column col-12 mb-4 p-2">
@@ -104,5 +129,7 @@
 </section>
 
 <app-faqs></app-faqs>
+
+<app-gallery [images]="images"></app-gallery>
 
 <app-join-community-cta></app-join-community-cta>
