@@ -1,0 +1,27 @@
+<section class="d-flex flex-column px-2 py-5 py-sm-9" style="background: #F1F1F1;">
+    <!-- INFO Header -->
+    <span class="mx-auto mb-4 mat-headline-3 text-align fw-bolder">Gallery</span>
+
+    <div class="d-flex position-relative">
+        <!-- INFO Left control -->
+        <div class="d-flex me-auto">
+            <button mat-icon-button class="m-auto" [disabled]="currentBatch === 0" (click)="previous()">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+        </div>
+
+        <!-- INFO Image wrapper -->
+        <div class="d-flex flex-wrap w-100 justify-content-start">
+            <div *ngFor="let item of imageBatch; index as i" class="d-flex w-50 w-sm-20 p-2" style="cursor: pointer;">
+                <img *ngIf="item.src" class="w-100" [src]="item.src" alt="Gallery Image" style="height: 192px; object-fit: cover" onerror="this.parentElement.remove();" (click)="openPreview(i)">
+            </div>
+        </div>
+
+        <!-- INFO Right control -->
+        <div class="d-flex ms-auto">
+            <button mat-icon-button class="m-auto" [disabled]="atEndOfGallery()" (click)="next()">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
+    </div>
+</section>
